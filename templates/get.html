@@ -9,5 +9,19 @@
 <body>
     <h1>Get Session</h1>
     {{return_value}}
+    <hr>
+    <div>
+        {%for key in keys%}
+            {{key}}
+        {%endfor%}
+        <hr>
+        {%for item in items%}
+            {{item}}
+        {%endfor%}
+    </div>
+    <div>
+        {{request.session.get_expiry_age}}
+        {{request.session.get_expiry_date}}
+    </div>
 </body>
 </html>

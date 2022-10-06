@@ -10,7 +10,9 @@ def set_session(request):
 def get_session(request):
     if 'name' in request.session:
         return_value = request.session['name']
-    return render(request, 'get.html', {'return_value':return_value})
+    keys = request.session.keys()
+    items = request.session.items()
+    return render(request, 'get.html', {'return_value':return_value, 'keys':keys, 'items':items})
 
 def del_session(request):
     request.session.flush()
